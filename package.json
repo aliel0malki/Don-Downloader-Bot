@@ -1,7 +1,7 @@
 {
   "name": "don-downloader",
-  "version": "1.0.0",
-  "description": "DON DOWNLOADER for Download everything.",
+  "version": "0.61.0",
+  "description": "DON DOWNLOADER for Download social media videos.",
   "main": "./src/don.js",
   "scripts": {
     "start": "nodemon ./src/don.js",
