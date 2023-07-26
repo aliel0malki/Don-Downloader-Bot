@@ -6,7 +6,7 @@ require("dotenv/config");
 const { DownTikTokVid } = require("./functions/tiktok_video");
 
 // IMPORT SERVER FUNCTIONS
-const { server } = require("./server.js");
+const { server } = require("./server");
 
 // RUN EXPRESS SERVER
 server();
