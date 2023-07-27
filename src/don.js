@@ -5,11 +5,19 @@ require("dotenv/config");
 // Import FuNCtiOns
 const { DownTikTokVid } = require("./functions/tiktok_video");
 
-// IMPORT SERVER FUNCTIONS
-const { server } = require("./server");
+const express = require("express");
 
-// RUN EXPRESS SERVER
-server();
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+  res.send("Bot is running!");
+});
+
+app.listen(port, () => {
+  console.log(`bot are listening on port ${port}`);
+});
+
 
 // inshlizlize Bot
 const bot = new Telegraf(process.env["BOT_TOKEN"]);
@@ -55,7 +63,7 @@ bot.help((ctx) =>
 bot.on("message", async (ctx) => {
   const msg = ctx.update.message.text;
   if (msg.startsWith("/tiktok")) {
-    DownTikTokVid(ctx);
+    DownTikTokVid(ctx, bot);
   }
 });
 
