@@ -52,7 +52,10 @@ const don = () => {
   ];
 
   // EVENTS
-  bot.start((ctx) => ctx.reply("SeND /help to KNoW HOw tO UsE."));
+  bot.start((ctx) => {
+    console.log(ctx.message.chat.id);
+    ctx.reply("SeND /help to KNoW HOw tO UsE.");
+  });
   bot.hears("/check", (ctx) => ctx.reply("Working ✅️"));
   bot.help((ctx) =>
     ctx.reply(
